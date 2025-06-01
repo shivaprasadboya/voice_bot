@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- using snippet
+  -->
+
+  <script>
+  var vapiInstance = null;
+  const assistant = "eda4bbd6-cea0-4f45-b658-4b80877090a5"; // Substitute with your assistant ID
+  const apiKey = "d079667c-9791-4054-ad98-fc3796803ffd"; // Substitute with your Public key from Vapi Dashboard.
+  const buttonConfig = {}; // Modify this as required
+
+  (function (d, t) {
+    var g = document.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    g.src =
+      "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+    g.defer = true;
+    g.async = true;
+    s.parentNode.insertBefore(g, s);
+
+    g.onload = function () {
+      vapiInstance = window.vapiSDK.run({
+        apiKey: apiKey, // mandatory
+        assistant: assistant, // mandatory
+        config: buttonConfig, // optional
+      });
+    };
+  })(document, "script");
+
+</script>
+
+</body>
+</html>
