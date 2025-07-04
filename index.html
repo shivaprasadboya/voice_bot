@@ -9,31 +9,9 @@
     <!-- using snippet
   -->
 
-  <script>
-  var vapiInstance = null;
-  const assistant = "eda4bbd6-cea0-4f45-b658-4b80877090a5"; // Substitute with your assistant ID
-  const apiKey = "d079667c-9791-4054-ad98-fc3796803ffd"; // Substitute with your Public key from Vapi Dashboard.
-  const buttonConfig = {}; // Modify this as required
+ <vapi-widget mode="voice" theme="dark" base-color="#75fffb" accent-color="#14B8A6" button-base-color="#000000" button-accent-color="#ffffff" radius="medium" size="compact" position="bottom-right" main-label="TALK WITH AI" start-button-text="Start" end-button-text="End Call" require-consent="true" local-storage-key="vapi_widget_consent" show-transcript="true" public-key="19473087-07fd-4989-a061-a9cf4a63b869" assistant-id="ed90cc5a-648f-43f0-b21e-4697bfbb041d"></vapi-widget>
 
-  (function (d, t) {
-    var g = document.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    g.src =
-      "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
-    g.defer = true;
-    g.async = true;
-    s.parentNode.insertBefore(g, s);
-
-    g.onload = function () {
-      vapiInstance = window.vapiSDK.run({
-        apiKey: apiKey, // mandatory
-        assistant: assistant, // mandatory
-        config: buttonConfig, // optional
-      });
-    };
-  })(document, "script");
-
-</script>
+<script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
 
 </body>
 </html>
